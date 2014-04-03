@@ -3,9 +3,9 @@ def print_header
   print "-------------\n"
 end
 
-def input(students)
-  students.each do |student|
-    print "#{student[:name]} (#{student[:cohort]} cohort)\n"
+def print_out(students)
+  students.each_with_index do |student, index|
+    print "#{index + 1} #{student[:name]} (#{student[:cohort]} cohort)\n"
   end
 end
 
@@ -34,5 +34,5 @@ end
 
 students = input_students
 print_header
-input(students)
+print_out(students)
 print_footer(students)
