@@ -1,29 +1,6 @@
-# We have put all student names into an Array
-students = [
-	{:name => "Steve Musgrave", :cohort => :March}, 
-	{:name => "Sroop Sunar", :cohort => :March}, 
-	{:name => "Colin Marshall", :cohort => :March}, 
-	{:name => "Josh Fail-Brown", :cohort => :March}, 
-	{:name => "Louise Lai", :cohort => :March}, 
-	{:name => "Robin Doble", :cohort => :March}, 
-	{:name => "Alex Wong", :cohort => :March}, 
-	{:name => "Scott Dimmock", :cohort => :March}, 
-	{:name => "Muhanad Al-Rubaiee", :cohort => :March}, 
-	{:name => "Shelley Hope", :cohort => :March}, 
-	{:name => "Will Hall", :cohort => :March}, 
-	{:name => "Oliver Delevingne", :cohort => :March}, 
-	{:name => "Nico", :cohort => :March}, 
-	{:name => "Apostolis", :cohort => :March}, 
-	{:name => "Stefania", :cohort => :March}, 
-	{:name => "Robert Leon", :cohort => :March}, 
-	{:name => "Emma Williams", :cohort => :March}, 
-	{:name => "Joey Wolf", :cohort => :March}, 
-	{:name => "Julie Walker", :cohort => :March}
-]
-
 def print_header
-puts "The students of my cohort at Makers Academy"
-puts "---------------"
+  puts "The students of my cohort at Makers Academy"
+  puts "-------------"
 end
 
 def print(students)
@@ -32,11 +9,30 @@ def print(students)
   end
 end
 
-def print_footer(names)
-	puts "Overall, we have #{names.length} great students"
+def print_footer(names)    
+  puts "Overall, we have #{names.length} great students"
 end
 
-#nothing happens until we call the methods
+def input_students
+  puts "Please enter the names of the students"
+  puts "To finish, just hit return twice"
+  # create an empty array
+  students = []
+  # get the first name
+  name = gets.chomp
+  # while the name is not empty, repeat this code
+  while !name.empty? do    
+    # add the student hash to the array
+    students << {:name => name, :cohort => :november}    
+    puts "Now we have #{students.length} students"
+    # get another name from the user
+    name = gets.chomp
+  end
+  # return the array of students
+  students
+end
+
+students = input_students
 print_header
 print(students)
 print_footer(students)
